@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>个人网页</title>
+        <link rel="stylesheet" href="Untitled-1.css">
+        <script src="hl.js"></script>
+       <style>
+        
+     .slider-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+        background-position: center center; 
+        background-size: cover; 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+       .slider-images {
+            display: flex;
+            width: 1500%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* 单个图片 */
+       .slider-image {
+            width: calc(100% / 15);
+            height: 100%;
+            object-fit: cover;
+        }
+
+        
+        /* 底部指示器容器 */
+        .slider-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        /* 指示器点 */
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        /* 激活状态的指示器 */
+        .slider-dot.active {
+            background: white;
+            transform: scale(1.33);
+        }
+
+        /* 响应式设计（移动端适配） */
+        @media (max-width: 768px) {
+            .slider-container {
+                width: 100%;
+                height: 300px;
+            }
+        }
+    </style>
+    </head>
+    <body class="fade-in">
+        <div id="bigbox">
+            
+            <nav>
+                <div class="a"><h1>&nbsp;&nbsp;<strong>个人网页</strong></h1></div>
+                <div class="b"><a href="lianxi.HTML"><strong>首页</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="li.html"><strong>短文</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="rizhi.html"><strong>日志</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="liuyan.html"><strong>留言板</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </nav>
+            
+            <div id="banner">
+               
+                <div class="slider-container">
+                    <div class="slider-images" id="sliderImages">
+                        <img src="https://img2.baidu.com/it/u=4132056813,1308129754&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800" alt="图片1" class="slider-image">
+                        <img src="https://img0.baidu.com/it/u=3217812679,2585737758&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" alt="图片2" class="slider-image">
+                        <img src="https://img-baofun.zhhainiao.com/pcwallpaper_ugc/static/c8d5a480de00a552d7eb1ad89fde95a6.jpg?x-oss-process=image%2fresize%2cm_lfit%2cw_3840%2ch_2160" alt="图片3" class="slider-image">
+                        <img src="http://img2.baidu.com/it/u=2074271138,1311371120&fm=253&app=138&f=JPEG?w=1423&h=800" alt="图片5" class="slider-image">
+                        <img src="https://iknow-pic.cdn.bcebos.com/fcfaaf51f3deb48f9632f243e21f3a292cf578d7" alt="图片5" class="slider-image">
+                        <img src="https://i0.hdslb.com/bfs/archive/d288c6986d0ec37c4573f35d18bea18d8fbf4813.jpg" alt="图片5" class="slider-image">
+                        <img src="http://img0.baidu.com/it/u=557821797,937750188&fm=253&app=138&f=JPEG?w=1280&h=800" alt="图片5" class="slider-image">
+                        <img src="https://img2.baidu.com/it/u=4132056813,1308129754&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800" alt="图片1" class="slider-image">
+                        <img src="https://img0.baidu.com/it/u=3217812679,2585737758&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" alt="图片2" class="slider-image">
+                        <img src="https://img-baofun.zhhainiao.com/pcwallpaper_ugc/static/c8d5a480de00a552d7eb1ad89fde95a6.jpg?x-oss-process=image%2fresize%2cm_lfit%2cw_3840%2ch_2160" alt="图片3" class="slider-image">
+                        <img src="http://img2.baidu.com/it/u=2074271138,1311371120&fm=253&app=138&f=JPEG?w=1423&h=800" alt="图片5" class="slider-image">
+                        <img src="https://iknow-pic.cdn.bcebos.com/fcfaaf51f3deb48f9632f243e21f3a292cf578d7" alt="图片5" class="slider-image">
+                        <img src="https://i0.hdslb.com/bfs/archive/d288c6986d0ec37c4573f35d18bea18d8fbf4813.jpg" alt="图片5" class="slider-image">
+                        <img src="http://img0.baidu.com/it/u=557821797,937750188&fm=253&app=138&f=JPEG?w=1280&h=800" alt="图片5" class="slider-image">
+                        <img src="http://img0.baidu.com/it/u=557821797,937750188&fm=253&app=138&f=JPEG?w=1280&h=800" alt="图片5" class="slider-image">
+                    </div>
+                </div>
+                <button class="slider-control left" id="prevBtn">&lt;</button>
+                <button class="slider-control right" id="nextBtn">&gt;</button>
+                <div class="slider-indicators" id="indicators"></div>
+               
+            </div>
+            <br>
+            <div id="main">
+                <div id="main_left">
+                    <h2 align="center">关于我</h2>
+                    <br>
+                    <p align="center"><img id="one" src="https://iknow-pic.cdn.bcebos.com/fcfaaf51f3deb48f32845640e21f3a292cf578bb" alt=""></p>
+                    <ul>
+                        <li>姓名:&nbsp;&nbsp;&nbsp;付勇</li>
+                        <br>
+                        <li>性别:&nbsp;&nbsp;&nbsp;男</li>
+                        <br>
+                        <li>民族:&nbsp;&nbsp;&nbsp;汉</li>
+                        <br>
+                        <li>年龄:&nbsp;&nbsp;&nbsp;24岁</li>
+                        <br>
+                        
+                        <li>籍贯:&nbsp;&nbsp;&nbsp;江西&nbsp;&nbsp;吉安</li>
+                        <br>
+                        <li>专业:&nbsp;&nbsp;&nbsp;计算机应用</li>
+                        <br>
+                        <li>邮箱:&nbsp;&nbsp;&nbsp;88888888@qq.com</li>
+                    </ul>
+                </div>
+               
+                <div id="main_right">
+                    <h2 align="center">热爱生活</h2>
+                    <hr>
+                    <br>
+                    <p>
+                        一、岁月从来不曾静好，只是有人在替你背负枷锁，含泪前行。也许是父母，也许是朋友，也许是陌生人……无论是谁，请记得常怀感恩之心。
+                    </p>
+                    <br>
+                    <p>
+                        二、这个世界并不完美，甚至有点残酷。你无法决定下一段旅途遇见的是好事还是坏事，可你能决定面对它们的态度。你看这个世界的角度，决定了这个世界给你的温度。
+                    </p>
+                    <br>
+                    <p>
+                        三、总会有一件事让你瞬间长大，也总会有一个人让你泪如雨下。愿你早日领教这个世界的深深恶意，让自己活得开心得意。
+                    </p>
+                    <br>
+                    <p>
+                        四、想要与众不同，却总随遇而安，想要做很多未做的事，却在现实棘手的吃喝拉撒前低下了头，我们间歇性热血满腔，长时间迷茫犯懒，别等了，再努力试试看！
+                    </p>
+                    <br>
+                    <br>
+                    <img class="right" src="https://img2.baidu.com/it/u=4162244826,1175662637&amp;fm=253&amp;fmt=auto?w=1422&amp;h=800" alt="">
+                </div>
+            </div>
+           <br><br>
+    <!-- 内容管理器 -->
+    <div id="contentManager">
+       
+    
+        <!-- 旅行生活 -->
+        <div id="travel" class="media-form active">
+            <h2 align="center">旅行生活</h2>
+            <br>
+            <br>
+            <div class="i">
+                    
+                    <div id="picture">
+                        <img class="on" src="https://img0.baidu.com/it/u=1404568430,822742429&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=1422&amp;h=800">
+                        <p>
+                            在玉林
+                        </p>
+                    </div>
+                    <div id="picture">
+                        <img class="on" src="https://img1.baidu.com/it/u=573231320,3719883187&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=749&amp;h=500">
+                        <p>
+                            精彩十分
+                        </p>
+                    </div>
+                    <div id="picture">
+                        <img class="on" src="https://img0.baidu.com/it/u=2096161825,3623618793&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=889&amp;h=500">
+                        <p>
+                            睡觉
+                        </p>
+                    </div>
+                    <div id="picture">
+                        <img class="on" src="https://img0.baidu.com/it/u=1173896101,4238488188&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=1422&amp;h=800">
+                        <p>
+                            睡觉
+                        </p>
+                    </div>
+                    <div id="picture">
+                        <img class="on" src="https://img1.baidu.com/it/u=3528157596,34629764&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=1422&amp;h=800">
+                        <p>
+                           划水
+                        </p>
+                    </div>
+                    <div id="picture">
+                        <img class="on" src="https://img1.baidu.com/it/u=2746904973,823953755&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=1422&amp;h=800">
+                        <p>
+                            在玉龙雪山
+                        </p>
+                    </div>
+                    
+                </div>
+                <br>
+                <div id="luxing">
+                    <h2 align="center">推荐书籍</h2>
+                    <br>
+                    <br>
+                    <div class="i" id="love">
+                        <div id="picture">
+                            <img class="on" src="https://img1.baidu.com/it/u=1480196961,2254893225&amp;fm=253&amp;app=138&amp;size=w931&amp;n=0&amp;f=JPEG&amp;fmt=auto?sec=1741366800&amp;t=9365b0a47e10b10aa07ef802a03aa75a" alt="">
+                            <p>人教版</p>
+                        </div>
+                        <div id="picture">
+                            <img class="on" src="https://img1.baidu.com/it/u=1120245727,4223509798&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=500&amp;h=753" alt="">
+                            <p>
+                                放学后
+                            </p>
+                        </div>
+                        <div id="picture">
+                            <img class="on" src="https://img2.baidu.com/it/u=2854987302,2503995941&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=500&amp;h=707" alt="">
+                            <br>
+                            <p>
+                               狂逆星辰
+                            </p>
+                        </div>
+                        <div id="picture">
+                            <img class="on" src="https://img2.baidu.com/it/u=3103840824,96418001&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=500&amp;h=647" alt="">
+                            <p>
+                                小王子
+                            </p>
+                        </div>
+                        
+                    </div>
+                
+            </div>
+            <br>
+            <br>
+            <div>
+                <footer>
+                    <p align=" center">
+                        版权所有©乐天
+                    </p>
+                </footer>
+            </div>
+        </div>
+        
+    
+    
+    </div></div>
+    <script>
+        // 初始化变量
+        const sliderImages = document.getElementById('sliderImages');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const indicatorsContainer = document.getElementById('indicators');
+        const images = document.querySelectorAll('.slider-image');
+        let currentIndex = 0;
+        const intervalTime = 3000;
+        let autoPlayInterval;
+    
+        // 创建指示器
+        function createIndicators() {
+            indicatorsContainer.innerHTML = ''; // 清空旧指示器
+            images.forEach((_, index) => {
+                const dot = document.createElement('span');
+                dot.classList.add('slider-dot');
+                dot.addEventListener('click', () => selectImage(index));
+                indicatorsContainer.appendChild(dot);
+            });
+            indicatorsContainer.children[0].classList.add('active');
+        }
+    
+        // 切换图片
+        function changeImage(direction) {
+            currentIndex = direction === 'next' ? currentIndex + 1 : currentIndex - 1;
+            
+            // 增强型循环检测
+            if (currentIndex >= images.length) currentIndex = 0;
+            else if (currentIndex < 0) currentIndex = images.length - 1;
+    
+            updateSliderPosition();
+            updateIndicators();
+        }
+    
+        // 更新滑块位置
+        function updateSliderPosition() {
+            const slidePercentage = currentIndex * (100 / images.length);
+            sliderImages.style.transform = `translateX(-${slidePercentage}%)`;
+        }
+    
+        // 选择指定图片
+        function selectImage(index) {
+            currentIndex = index;
+            updateSliderPosition();
+            updateIndicators();
+            stopAutoPlay();
+            startAutoPlay();
+        }
+    
+        // 更新指示器
+        function updateIndicators() {
+            Array.from(indicatorsContainer.children).forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+    
+        // 自动播放
+        function startAutoPlay() {
+            stopAutoPlay();
+            autoPlayInterval = setInterval(() => changeImage('next'), intervalTime);
+        }
+    
+        // 停止播放
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+    
+        // 事件监听
+        prevBtn.addEventListener('click', () => {
+            changeImage('prev');
+            stopAutoPlay();
+            startAutoPlay();
+        });
+    
+        nextBtn.addEventListener('click', () => {
+            changeImage('next');
+            stopAutoPlay();
+            startAutoPlay();
+        });
+    
+        sliderImages.addEventListener('mouseenter', stopAutoPlay);
+        sliderImages.addEventListener('mouseleave', startAutoPlay);
+    
+        // 初始化
+        createIndicators();
+        startAutoPlay();
+    </script>
+   </body>
+</html>
